@@ -27,8 +27,12 @@ public class GestorVuelos {
     }
 
     public void insertarVuelos(String destino, String origen, String fechaInicio) {
-        Vuelos vuelo = new Vuelos(destino, origen, fechaInicio);
+        Vuelos vuelo = new Vuelos(destino, origen, fechaInicio, false);
         vuelos = Arrays.copyOf(vuelos, vuelos.length + 1);
         vuelos[vuelos.length - 1] = vuelo;
+    }
+
+    public void reservarVuelo(String usuario, String vuelo) {
+        
     }
 }
