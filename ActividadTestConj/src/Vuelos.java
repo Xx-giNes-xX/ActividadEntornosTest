@@ -14,4 +14,5 @@ public class Vuelos {
     public void setReservado(boolean reservado) {
         this.reservado = reservado;
     }
+
 }

@@ -34,6 +34,7 @@ public class GestorVuelos {
         vuelos[vuelos.length - 1] = vuelo;
     }
 
+
     public void reservarVuelo(String usuario, Vuelos Vuelo) {
         Vuelo.setReservado(true);
         Reservas Reserva = new Reservas(usuario, Vuelo, true);
@@ -50,5 +51,21 @@ public class GestorVuelos {
                 break;
             }
         }
+    }
+}
+
+    public Vuelos[] vuelosReservados(Vuelos[] vuelosVer) {
+        Vuelos[] vuelosRes = {};
+        for (int i = 0; i < vuelosVer.length; i++) {
+            if (vuelosVer[i].reservado) {
+                vuelosRes = Arrays.copyOf(vuelosRes, vuelosRes.length + 1);
+                vuelosRes[vuelosRes.length - 1] = vuelosVer[i];
+            }
+        }
+        return vuelosRes;
+    }
+
+    public void print() {
+        System.out.println("Mensaje enviado.");
     }
 }
