@@ -26,9 +26,24 @@ public class GestorVuelos {
         return vueloSem;
     }
 
-    public void insertarVuelos(String destino, String origen, String fechaInicio) {
-        Vuelos vuelo = new Vuelos(destino, origen, fechaInicio);
+    public void insertarVuelos(String destino, String origen, String fechaInicio, boolean reservado) {
+        Vuelos vuelo = new Vuelos(destino, origen, fechaInicio, reservado);
         vuelos = Arrays.copyOf(vuelos, vuelos.length + 1);
         vuelos[vuelos.length - 1] = vuelo;
+    }
+
+    public Vuelos[] vuelosReservados(Vuelos[] vuelosVer) {
+        Vuelos[] vuelosRes = {};
+        for (int i = 0; i < vuelosVer.length; i++) {
+            if (vuelosVer[i].reservado) {
+                vuelosRes = Arrays.copyOf(vuelosRes, vuelosRes.length + 1);
+                vuelosRes[vuelosRes.length - 1] = vuelosVer[i];
+            }
+        }
+        return vuelosRes;
+    }
+
+    public void print() {
+        System.out.println("Mensaje enviado.");
     }
 }
