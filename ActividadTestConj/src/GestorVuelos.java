@@ -52,7 +52,6 @@ public class GestorVuelos {
             }
         }
     }
-}
 
     public Vuelos[] vuelosReservados(Vuelos[] vuelosVer) {
         Vuelos[] vuelosRes = {};
