@@ -9,6 +9,10 @@ public class Reservas {
         this.Estado = Estado;
     }
 
+    public Reservas() {
+
+    }
+
     public void setReservado(boolean Estado) {
         this.Estado = Estado;
     }
