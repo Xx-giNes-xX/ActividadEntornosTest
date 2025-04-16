@@ -5,23 +5,25 @@ public class GestorVuelos {
     Reservas []reservas = new Reservas[0];
 
     public Vuelos[] consultarVueloDia(String fechaVuelo) {
-        Vuelos []vueloDia = new Vuelos[0];
+        Vuelos[] vueloDia = new Vuelos[0];
         for (int i = 0; i < vuelos.length; i++) {
-            if (vuelos[i].fechaVuelo == fechaVuelo) {
-                vueloDia = Arrays.copyOf(vueloDia, vuelos.length + 1);
+            if (vuelos[i].fechaVuelo.equals(fechaVuelo)) {
+                vueloDia = Arrays.copyOf(vueloDia, vueloDia.length + 1);
                 vueloDia[vueloDia.length - 1] = vuelos[i];
             }
         }
         return vueloDia;
     }
 
+
     public Vuelos[] consultarVueloSemana(String fechaInicio) {
         fechaInicio = fechaInicio.replace("-", "");
         int fecha = Integer.parseInt(fechaInicio);
-        Vuelos [] vueloSem = new Vuelos[0];
+        Vuelos[] vueloSem = new Vuelos[0];
         for (int i = 0; i < vuelos.length; i++) {
-            if (Integer.parseInt(vuelos[i].fechaVuelo) >= fecha || Integer.parseInt(vuelos[i].fechaVuelo) <= fecha+7) {
-                vueloSem = Arrays.copyOf(vueloSem, vuelos.length + 1);
+            int fechaVuelo = Integer.parseInt(vuelos[i].fechaVuelo);
+            if (fechaVuelo >= fecha && fechaVuelo <= (fecha + 7)) {
+                vueloSem = Arrays.copyOf(vueloSem, vueloSem.length + 1);
                 vueloSem[vueloSem.length - 1] = vuelos[i];
             }
         }
