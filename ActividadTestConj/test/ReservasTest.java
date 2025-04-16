@@ -9,13 +9,13 @@ class ReservasTest {
     void setReservado() {
         Reservas reservas = new Reservas();
         boolean result = true;
-        Assertions.assertEquals(true, result);
+        reservas.setReservado(result);
     }
 
     @Test
     void getEstado() {
         Reservas reservas = new Reservas();
-        Assertions.assertEquals(false, reservas.getEstado());
+        assertFalse(reservas.getEstado());
     }
 
     @Test
