@@ -53,6 +53,7 @@ class GestorVuelosTest {
 
     @Test
     void print() {
-
+        GestorVuelos gv = new GestorVuelos();
+        gv.print();
     }
 }
