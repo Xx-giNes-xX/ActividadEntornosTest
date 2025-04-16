@@ -29,4 +29,13 @@ public class Reservas {
         this.Estado = false;
         this.Vuelo.setReservado(false);
     }
+
+    @Override
+    public String toString() {
+        return "Reservas{" +
+                "Usuario='" + Usuario + '\'' +
+                ", Vuelo=" + Vuelo +
+                ", Estado=" + Estado +
+                '}';
+    }
 }

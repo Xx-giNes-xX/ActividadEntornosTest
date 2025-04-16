@@ -21,7 +21,7 @@ public class GestorVuelos {
         int fecha = Integer.parseInt(fechaInicio);
         Vuelos[] vueloSem = new Vuelos[0];
         for (int i = 0; i < vuelos.length; i++) {
-            int fechaVuelo = Integer.parseInt(vuelos[i].fechaVuelo);
+            int fechaVuelo = Integer.parseInt(vuelos[i].fechaVuelo.replace("-", ""));
             if (fechaVuelo >= fecha && fechaVuelo <= (fecha + 7)) {
                 vueloSem = Arrays.copyOf(vueloSem, vueloSem.length + 1);
                 vueloSem[vueloSem.length - 1] = vuelos[i];
