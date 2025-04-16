@@ -13,7 +13,8 @@ public class Main {
             System.out.println("3. Consultar vuelos por semana");
             System.out.println("4. Reservar vuelo");
             System.out.println("5. Mostrar vuelos reservados");
-            System.out.println("6. Salir");
+            System.out.println("6. Cancelar reserva");
+            System.out.println("7. Salir");
             System.out.print("Elige una opción: ");
             opcion = sc.nextInt();
             sc.nextLine();
@@ -90,15 +91,35 @@ public class Main {
                         }
                     }
                     break;
-
                 case 6:
+                    System.out.print("Introduce tu nombre de usuario: ");
+                    String user = sc.nextLine();
+                    Vuelos[] vuelosReservados = gestor.vuelosReservados(gestor.vuelos);
+                    if (vuelosReservados.length == 0) {
+                        System.out.println("No tienes vuelos reservados.");
+                    } else {
+                        for (int i = 0; i < vuelosReservados.length; i++) {
+                            System.out.println(i + ": " + vuelosReservados[i]);
+                        }
+                        System.out.print("Selecciona el número del vuelo a cancelar: ");
+                        int cancelar = sc.nextInt();
+                        sc.nextLine();
+                        if (cancelar >= 0 && cancelar < vuelosReservados.length) {
+                            gestor.cancelarReserva(user, vuelosReservados[cancelar]);
+                            System.out.println("Reserva cancelada.");
+                        } else {
+                            System.out.println("Índice inválido.");
+                        }
+                    }
+                    break;
+                case 7:
                     System.out.println("Saliendo del gestor...");
                     break;
 
                 default:
                     System.out.println("Opción inválida.");
             }
-        } while (opcion != 6);
+        } while (opcion != 7);
 
         sc.close();
     }

@@ -39,12 +39,13 @@ public class GestorVuelos {
 
     public void reservarVuelo(String usuario, Vuelos Vuelo) {
         Vuelo.setReservado(true);
-        Reservas Reserva = new Reservas(usuario, Vuelo, true);
-        reservas = Arrays.copyOf(reservas, vuelos.length + 1);
-        reservas[reservas.length -1] = Reserva;
+        Reservas reserva = new Reservas(usuario, Vuelo, true);
+        reservas = Arrays.copyOf(reservas, reservas.length + 1);
+        reservas[reservas.length - 1] = reserva;
     }
 
-    public void cancelarVuelo(String usuario, Vuelos vuelo) {
+
+    public void cancelarReserva(String usuario, Vuelos vuelo) {
         for (Reservas reserva : reservas) {
             if (reserva.getUsuario().equals(usuario) && 
                 reserva.getVuelo().equals(vuelo)) {
