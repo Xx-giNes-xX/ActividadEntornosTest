@@ -15,4 +15,13 @@ public class Vuelos {
         this.reservado = reservado;
     }
 
+    @Override
+    public String toString() {
+        return "Vuelos{" +
+                "destino='" + destino + '\'' +
+                ", origen='" + origen + '\'' +
+                ", fechaVuelo='" + fechaVuelo + '\'' +
+                ", reservado=" + reservado +
+                '}';
+    }
 }
